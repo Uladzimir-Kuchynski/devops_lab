@@ -20,5 +20,4 @@ l = list(map(int, input().split()))
 
 for i in l:
     print(myString[i - 1])
-
 #    '\n'.join(t)
