@@ -16,8 +16,8 @@ print(myString)
 
 m = int(input("m=\n"))
 
-l = list(map(int, input().split()))
+list_of_num = list(map(int, input().split()))
 
-for i in l:
+for i in list_of_num:
     print(myString[i - 1])
 #    '\n'.join(t)

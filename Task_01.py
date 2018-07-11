@@ -12,4 +12,4 @@ for name, score in students.items():
     if score == a:
         b.append(name)
 
-print (sorted(b))
+print(sorted(b))
