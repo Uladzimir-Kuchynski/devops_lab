@@ -1,14 +1,13 @@
 list_of_strings = list(map(str, input().split()))
-recofscores = []
+scores = []
 for rec in list_of_strings:
     if rec == "+":
-        toolong = recofscores[len(recofscores) - 1] \
-                  + recofscores[len(recofscores) - 2]
-        recofscores.append(toolong)
+        t = scores[len(scores) - 1] + scores[len(scores) - 2]
+        scores.append(t)
     elif rec == "C":
-        recofscores.pop()
+        scores.pop()
     elif rec == "D":
-        recofscores.append(recofscores[len(recofscores) - 1] * 2)
+        scores.append(scores[len(scores) - 1] * 2)
     else:
-        recofscores.append(int(rec))
-print(sum(recofscores))
+        scores.append(int(rec))
+print(sum(scores))
