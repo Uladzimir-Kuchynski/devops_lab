@@ -1,5 +1,4 @@
 list_of_strings = list(map(str, input().split()))
-
 records_of_scores = []
 
 for rec in list_of_strings:
