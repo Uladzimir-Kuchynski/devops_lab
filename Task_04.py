@@ -4,7 +4,8 @@ records_of_scores = []
 
 for rec in list_of_strings:
     if rec == "+":
-        toolong = records_of_scores[len(records_of_scores) - 1] + records_of_scores[len(records_of_scores) - 2]
+        toolong = records_of_scores[len(records_of_scores) - 1] \
+                  + records_of_scores[len(records_of_scores) - 2]
         records_of_scores.append(toolong)
     elif rec == "C":
         records_of_scores.pop()
