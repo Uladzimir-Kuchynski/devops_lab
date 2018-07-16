@@ -24,5 +24,5 @@ for possiblePrime in range(2, 10**5):
 
 # Вывод чисел по их индексам:
 print(s)
-myString = ''.join(s[i-1] for i in list_of_num)
+myString = ''.join(s[i - 1] for i in list_of_num)
 print(myString)
