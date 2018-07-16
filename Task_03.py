@@ -19,11 +19,10 @@ for possiblePrime in range(2, 10**5):
             isPrime = False
     if isPrime:
         s += str(possiblePrime)
-    if   len(s)>maximum:
+    if len(s) > maximum:
         break
 
 # Вывод чисел по их индексам:
-
 print(s)
 myString = ''.join(s[i-1] for i in list_of_num)
 print(myString)
