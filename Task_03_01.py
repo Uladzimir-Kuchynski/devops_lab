@@ -9,11 +9,14 @@ import time
 def cpu_load():
     return psutil.cpu_percent(0.5, True)
 
+
 def memory_use():
     return psutil.disk_usage('/')
 
+
 def virt_memory():
     return psutil.virtual_memory().used / (1024 * 1024)
+
 
 def io_check():
     return psutil.disk_io_counters().write_count
@@ -22,6 +25,7 @@ def io_check():
 def network():
     return psutil.net_if_addrs()["eno1"][0][1]
 # print(network())
+
 
 def out():
     print(' CPU load: ', cpu_load(),
@@ -66,19 +70,19 @@ if output == 'json':
 # listOfparam - это список, который наполняется;
 # indent - это ключевой параметр для отступов
 # json изначально по умолчанию не поддерживает UTF-8 =>
-# => использование ключевого параметра ensure_ascii (американская стандартная кодировка обмена информации)
-
+# => использование ключевого параметра
+# ensure_ascii (американская стандартная кодировка обмена информации)
 
 # Вывод информации в txt:
 if output == 'txt':
     for i in range(configuration.num):
         j = i + 1
         print('Snapshot ', j, ': ',
-        ' Time :', time.strftime('%H:%M:%S'),
-        ' CPU: ', cpu_load(),
-        ' Memory: ', memory_use(), 'Mb',
-        ' Virtual memory: ', virt_memory(), 'Mb',
-        ' IO: ', io_check(),
-        ' Network: ', network(),
-        file=open('output.txt', 'a'))
+              ' Time :', time.strftime('%H:%M:%S'),
+              ' CPU: ', cpu_load(),
+              ' Memory: ', memory_use(), 'Mb',
+              ' Virtual memory: ', virt_memory(), 'Mb',
+              ' IO: ', io_check(),
+              ' Network: ', network(),
+              file=open('output.txt', 'a'))
         time.sleep(interval)
