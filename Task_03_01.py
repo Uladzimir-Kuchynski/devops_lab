@@ -13,7 +13,7 @@ def memory_use():
     return psutil.disk_usage('/')
 
 def virt_memory():
-    return psutil.virtual_memory().used / (1024*1024)
+    return psutil.virtual_memory().used / (1024 * 1024)
 
 def io_check():
     return psutil.disk_io_counters().write_count
@@ -65,7 +65,8 @@ if output == 'json':
 # dump - это метод, который осуществляет запись объектов в файл;
 # listOfparam - это список, который наполняется;
 # indent - это ключевой параметр для отступов
-# json изначально по умолчанию не поддерживает UTF-8 => использование ключевого параметра ensure_ascii (американская стандартная кодировка обмена информации)
+# json изначально по умолчанию не поддерживает UTF-8 =>
+# => использование ключевого параметра ensure_ascii (американская стандартная кодировка обмена информации)
 
 
 # Вывод информации в txt:
@@ -76,7 +77,7 @@ if output == 'txt':
         ' Time :', time.strftime('%H:%M:%S'),
         ' CPU: ', cpu_load(),
         ' Memory: ', memory_use(), 'Mb',
-        ' Virtual memory: ', virt_memory(),'Mb',
+        ' Virtual memory: ', virt_memory(), 'Mb',
         ' IO: ', io_check(),
         ' Network: ', network(),
         file=open('output.txt', 'a'))
