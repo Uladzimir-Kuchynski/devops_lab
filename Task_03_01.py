@@ -24,35 +24,35 @@ def network():
 # print(network())
 
 def out():
-    print(" CPU load: ", cpu_load(),
-          " Memory use: ", memory_use(),
-          " Virtual memory: ", virt_memory(),
-          " IO check: ", io_check(),
-          " Network: ", network())
+    print(' CPU load: ', cpu_load(),
+          ' Memory use: ', memory_use(),
+          ' Virtual memory: ', virt_memory(),
+          ' IO check: ', io_check(),
+          ' Network: ', network())
 
-with open("configuration.py", 'r') as stream:
-    my_configuration = configuration.load(stream)
-interval = my_configuration['interval']
-output = my_configuration['output']
+
+interval = configuration.interval
+
+output = configuration.output
 
 listOfparam = list()
 if output == 'json':
-    for i in range(3):
+    for i in range(configuration.num):
         j = i + 1
         json_p = {
             'Snapshot ': j,
-            'Time': time.strftime("%H:%M:%S"),
+            'Time': time.strftime('%H:%M:%S'),
             'CPU': cpu_load(),
             'Memory': memory_use(),
             'Virtual memory': virt_memory(),
             'IO check': io_check(),
             'Network': network(),
         }
-        print("OK")
-        listOfparam.append(json_p)
-        print(listOfparam)
-        time.sleep(1 * interval)
+        with open('json_file.json', 'a') as file:
+            json.dump(listOfparam, file, indent=2, ensure_ascii=False)
+        print('OK')
 
+        time.sleep(interval)
 
 # Запись данных в JSON файл:
 # with - это контекстный менеджер;
@@ -61,11 +61,23 @@ if output == 'json':
 # 'w' - это флаг записи для файла;
 # file - это переменная, куда сохраняется json_file.json
 
- with open('json_file'.json, 'w') as file:
-    json.dump(listOfparam, file, indent=2, ensure_ascii=False)
-
 # json - это модуль;
 # dump - это метод, который осуществляет запись объектов в файл;
 # listOfparam - это список, который наполняется;
 # indent - это ключевой параметр для отступов
 # json изначально по умолчанию не поддерживает UTF-8 => использование ключевого параметра ensure_ascii (американская стандартная кодировка обмена информации)
+
+
+# Вывод информации в txt:
+if output == 'txt':
+    for i in range(configuration.num):
+        j = i + 1
+        print('Snapshot ', j, ': ',
+        ' Time :', time.strftime('%H:%M:%S'),
+        ' CPU: ', cpu_load(),
+        ' Memory: ', memory_use(), 'Mb',
+        ' Virtual memory: ', virt_memory(),'Mb',
+        ' IO: ', io_check(),
+        ' Network: ', network(),
+        file=open('output.txt', 'a'))
+        time.sleep(interval)
