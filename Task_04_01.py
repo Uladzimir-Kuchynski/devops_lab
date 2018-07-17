@@ -6,7 +6,7 @@ import psutil
 import time
 
 
-class Simple(object):
+class Simple():
     @staticmethod
     def cpu_load():
         # self - обязательный аргумент, содержащий в себе экземпляр
