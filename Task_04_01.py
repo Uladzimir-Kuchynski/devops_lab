@@ -5,10 +5,10 @@ import json
 import psutil
 import time
 
-class Simple(object):
 
+class Simple(object):
     @staticmethod
-    def cpu_load(self):
+    def cpu_load():
         # self - обязательный аргумент, содержащий в себе экземпляр
         # класса, передающийся при вызове метода,
         # поэтому этот аргумент должен присутствовать
@@ -16,38 +16,37 @@ class Simple(object):
         return psutil.cpu_percent(0.5, True)
 
     @staticmethod
-    def memory_use(self):
+    def memory_use():
         return psutil.disk_usage('/')
 
     @staticmethod
-    def virt_memory(self):
+    def virt_memory():
         return psutil.virtual_memory().used / (1024 * 1024)
 
     @staticmethod
-    def io_check(self):
+    def io_check():
         return psutil.disk_io_counters().write_count
 
     @staticmethod
-    def network(self):
+    def network():
         return psutil.net_if_addrs()["eno1"][0][1]
 
-
-# print(network())
+    # print(network())
 
     @staticmethod
-    def out(self):
+    def out():
         print(' CPU load: ', Simple.cpu_load(),
-          ' Memory use: ', Simple.memory_use(),
-          ' Virtual memory: ', Simple.virt_memory(),
-          ' IO check: ', Simple.io_check(),
-          ' Network: ', Simple.network())
+              ' Memory use: ', Simple.memory_use(),
+              ' Virtual memory: ', Simple.virt_memory(),
+              ' IO check: ', Simple.io_check(),
+              ' Network: ', Simple.network())
 
 
 interval = configuration.interval
 
 output = configuration.output
 
-listOfparam = list()
+listOfparam = []
 if output == 'json':
     for i in range(configuration.num):
         j = i + 1
@@ -61,7 +60,7 @@ if output == 'json':
             'Network': Simple.network(),
         }
         with open('json_file.json', 'a') as file:
-            json.dump(listOfparam, file, indent=2, ensure_ascii=False)
+            json.dump(json_p, file, indent=2, ensure_ascii=False)
         print('OK')
 
         time.sleep(interval)
@@ -69,7 +68,7 @@ if output == 'json':
 # Запись данных в JSON файл:
 # with - это контекстный менеджер;
 # open()- это функция;
-# 'json_file'.json - это имя файла;
+# 'json_file.json' - это имя файла;
 # 'w' - это флаг записи для файла;
 # file - это переменная, куда сохраняется json_file.json
 

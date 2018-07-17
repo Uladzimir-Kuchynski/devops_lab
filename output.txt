@@ -1,0 +1,6 @@
+Snapshot  1 :   Time : 16:52:06  CPU:  [7.8, 2.1, 4.0, 2.0]  Memory:  sdiskusage(total=865477320704, used=263862181888, free=557627588608, percent=32.1) Mb  Virtual memory:  7800.5546875 Mb  IO:  780610  Network:  10.6.205.117
+Snapshot  2 :   Time : 16:52:12  CPU:  [10.2, 8.2, 10.2, 8.2]  Memory:  sdiskusage(total=865477320704, used=263862226944, free=557627543552, percent=32.1) Mb  Virtual memory:  7762.65625 Mb  IO:  780764  Network:  10.6.205.117
+Snapshot  1 :   Time : 16:52:13  CPU:  [6.0, 2.0, 5.9, 6.0]  Memory:  sdiskusage(total=865477320704, used=263862226944, free=557627543552, percent=32.1) Mb  Virtual memory:  7771.55078125 Mb  IO:  780764  Network:  10.6.205.117
+Snapshot  2 :   Time : 16:52:19  CPU:  [8.0, 6.0, 10.0, 4.1]  Memory:  sdiskusage(total=865477320704, used=263862226944, free=557627543552, percent=32.1) Mb  Virtual memory:  7765.40625 Mb  IO:  780783  Network:  10.6.205.117
+Snapshot  1 :   Time : 16:59:24  CPU:  [8.0, 7.8, 6.0, 6.0]  Memory:  sdiskusage(total=865477320704, used=263862566912, free=557627203584, percent=32.1) Mb  Virtual memory:  7845.9375 Mb  IO:  786065  Network:  10.6.205.117
+Snapshot  2 :   Time : 16:59:30  CPU:  [6.0, 4.0, 4.0, 7.7]  Memory:  sdiskusage(total=865477320704, used=263862636544, free=557627133952, percent=32.1) Mb  Virtual memory:  7847.79296875 Mb  IO:  786214  Network:  10.6.205.117
